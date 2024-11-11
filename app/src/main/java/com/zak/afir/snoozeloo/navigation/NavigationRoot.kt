@@ -29,6 +29,10 @@ fun NavGraphBuilder.alarmsGraph(navController: NavHostController) {
         )
     }
     composable(route = "addNewAlarm") {
-        AddNewAlarmScreenRoot()
+        AddNewAlarmScreenRoot(
+            onNavigateBack = {
+                navController.navigateUp()
+            }
+        )
     }
 }
