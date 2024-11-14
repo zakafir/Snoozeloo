@@ -43,7 +43,7 @@ class AddNewAlarmViewModel(
                         label = state.alarmName.text.toString()
                     )
                     // TODO: save alarm
-                    alarmRepository.saveAlarm(alarm)
+                    alarmRepository.upsert(alarm)
                     Timber.d("Saved Alarm, name: ${state.alarmName}, hours: ${state.hours}, minutes: ${state.minutes}")
                 } else {
                     Timber.d("Cannot save Alarm")
